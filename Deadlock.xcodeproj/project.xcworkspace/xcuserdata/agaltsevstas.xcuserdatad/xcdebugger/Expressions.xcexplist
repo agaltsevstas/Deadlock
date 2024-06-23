@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "bool Deadlock&lt;Spinlock, Spinlock&gt;::operator()() const::&apos;lambda&apos;(auto&amp;&amp;...)::operator()&lt;Spinlock&amp;, Spinlock&amp;&gt;(auto&amp;&amp;...) const:Deadlock.h">
+      </ContextState>
+      <ContextState
+         contextName = "bool Deadlock&lt;Spinlock, Spinlock&gt;::operator()() const::&apos;lambda&apos;(auto&amp;&amp;...)::operator()&lt;Spinlock&amp;&gt;(auto&amp;&amp;...) const:Deadlock.h">
+      </ContextState>
+      <ContextState
+         contextName = "auto Deadlock&lt;Spinlock, Spinlock&gt;::Wait()::&apos;lambda&apos;(auto&amp;&amp;)::operator()&lt;Spinlock&amp;&gt;(auto&amp;&amp;) const:Deadlock.h">
+      </ContextState>
+      <ContextState
+         contextName = "auto Deadlock&lt;Spinlock, Spinlock&gt;::Create()::&apos;lambda&apos;(auto&amp;&amp;)::operator()&lt;Spinlock&amp;&gt;(auto&amp;&amp;) const:Deadlock.h">
+      </ContextState>
+      <ContextState
+         contextName = "bool Deadlock&lt;Spinlock, Spinlock&gt;::Wait()::&apos;lambda&apos;(auto&amp;&amp;)::operator()&lt;Spinlock&amp;&gt;(auto&amp;&amp;) const:Deadlock.h">
+      </ContextState>
+      <ContextState
+         contextName = "main:main.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "mutex1">
+            </PersistentString>
+            <PersistentString
+               value = "mutex2">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
