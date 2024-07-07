@@ -29,7 +29,7 @@ public:
     {
         if (_flag)
         {
-            auto Check = [this](auto&& mutex) noexcept
+            auto Check = [this](const auto& mutex) noexcept
             {
                 if (mutex.GetThread_ID() != std::this_thread::get_id() &&
                     mutex.GetThread_ID() != std::thread::id())
@@ -47,7 +47,7 @@ public:
     
     void Destroy()
     {
-        auto MutexUnlock = [](auto&& mutex) noexcept
+        auto MutexUnlock = [](auto& mutex) noexcept
         {
             mutex.StrongUnlock();
         };
@@ -58,7 +58,7 @@ public:
     bool operator()() const noexcept
     {
         std::optional<std::thread::id> thread_id;
-        auto Check = [&thread_id](auto&& mutex) noexcept -> bool
+        auto Check = [&thread_id](const auto& mutex) noexcept -> bool
         {
             if (thread_id.has_value() && *thread_id != mutex.GetThread_ID())
                 return true;
