@@ -16,7 +16,7 @@ public:
     Spinlock() = default;
     ~Spinlock() = default;
     
-    void Lock() noexcept
+    void Lock()
     {
         if (_flag)
         {
@@ -29,7 +29,7 @@ public:
         }
     }
     
-    bool Try_lock() noexcept
+    bool Try_lock()
     {
         auto lock = _flag.load();
         if (!lock)
@@ -38,7 +38,7 @@ public:
         return !lock;
     }
     
-    void Unlock() noexcept
+    void Unlock()
     {
         if (_thread_id == std::this_thread::get_id())
         {
@@ -53,7 +53,7 @@ private:
         return _thread_id;
     }
     
-    void StrongUnlock() noexcept
+    void StrongUnlock()
     {
         _flag = false;
         _thread_id = std::thread::id();

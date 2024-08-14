@@ -11,11 +11,11 @@ class Deadlock final
     using Mutexs = std::tuple<TArgs&...>;
     
 public:
-    Deadlock(TArgs& ...args) noexcept :
+    Deadlock(TArgs& ...args):
     _flag(false),
     _mutexs(args...) {}
     
-    void SetLock(bool flag) noexcept
+    void SetLock(bool flag)
     {
         _flag = flag;
     }
@@ -47,7 +47,7 @@ public:
     
     void Destroy()
     {
-        auto MutexUnlock = [](auto& mutex) noexcept
+        auto MutexUnlock = [](auto& mutex)
         {
             mutex.StrongUnlock();
         };
@@ -58,7 +58,7 @@ public:
     bool operator()() const noexcept
     {
         std::optional<std::thread::id> thread_id;
-        auto Check = [&thread_id](const auto& mutex) noexcept -> bool
+        auto Check = [&thread_id](const auto& mutex) -> bool
         {
             if (thread_id.has_value() && *thread_id != mutex.GetThread_ID())
                 return true;
