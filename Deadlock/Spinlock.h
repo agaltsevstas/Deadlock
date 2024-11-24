@@ -48,7 +48,7 @@ public:
     }
     
 private:
-    std::thread::id GetThread_ID() const noexcept
+    std::thread::id GetThread_ID() const
     {
         return _thread_id;
     }

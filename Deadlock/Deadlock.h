@@ -29,7 +29,7 @@ public:
     {
         if (_flag)
         {
-            auto Check = [this](const auto& mutex) noexcept
+            auto Check = [this](const auto& mutex)
             {
                 if (mutex.GetThread_ID() != std::this_thread::get_id() &&
                     mutex.GetThread_ID() != std::thread::id())
@@ -55,7 +55,7 @@ public:
         CallApply(MutexUnlock);
     }
     
-    bool operator()() const noexcept
+    bool operator()() const
     {
         std::optional<std::thread::id> thread_id;
         auto Check = [&thread_id](const auto& mutex) -> bool
@@ -73,7 +73,7 @@ public:
     
 private:
     template<typename TFunction>
-    decltype(auto) CallApply(TFunction&& function) const noexcept
+    decltype(auto) CallApply(TFunction&& function) const
     {
         return std::apply([&function](auto&& ...args) noexcept -> decltype(auto)
         {
